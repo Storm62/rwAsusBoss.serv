@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>add task (autosa)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Запись задания</h1>
+<form action="#" th:action="@{/add}" th:object="${addtask}" method="post">
+    <p>Номер: <br />  <input type="text" th:field="*{num}" /></p>
+    <p>Время: <br />  <input type="text" th:field="*{time}" /></p>
+    <p>Telnet: <br /> <input type="text" th:field="*{telnet}" /></p>
+    <p>Ftp: <br /> <input type="text" th:field="*{ftpPath}" /></p>
+    <p>Сохранить как: <br /> <input type="text" th:field="*{saveAs}" /></p>
+    <p>Запустить: <br /> <input type="text" th:field="*{runProc}" /></p>
+    <p><input type="reset" value="Reset" /> <input type="submit" value="Записать" /> </p>
+</form>
+</body>
+</html>

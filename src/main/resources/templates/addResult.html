@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>successful (autosa)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<b><p th:text="'id:'" ></b>
+    <p th:text="'  ' + ${addtask.num}" />
+<b><p th:text="'time:'" ></b>
+    <p th:text="'  ' + ${addtask.time}" />
+<b><p th:text="'telnet:'" ></b>
+    <p th:text="'  ' + ${addtask.telnet}" />
+<b><p th:text="'ftp path:'" ></b>
+    <p th:text="'  ' + ${addtask.ftpPath}" />
+<b><p th:text="'save as:'" ></b>
+    <p th:text="'  ' + ${addtask.saveAs}" />
+<b><p th:text="'run:'" ></b>
+    <p th:text="'  ' + ${addtask.runProc}" />
+<br />
+<a href="/add"><b>Еще одно задание</b></a>
+</body>
+</html>
