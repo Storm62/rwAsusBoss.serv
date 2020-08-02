@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AsusBoss clients status</title>
+</head>
+
+<body>
+<style>
+    #listMag {
+        line-height: 0.8pt;
+    }
+</style>
+
+<div id="listMag">
+<b><pre><p th:text="'id:         last connect'" ></pre></b>
+<hr align="left" width="300" size="1" color="#ff0000" />
+<pre><p th:text="'1297        ' + ${info.getAbsencePeriod(1297)}" /></pre>
+<pre><p th:text="'1396        ' + ${info.getAbsencePeriod(1396)}" /></pre>
+<pre><p th:text="'1516        ' + ${info.getAbsencePeriod(1516)}" /></pre>
+<pre><p th:text="'1856        ' + ${info.getAbsencePeriod(1856)}" /></pre>
+<pre><p th:text="'1977        ' + ${info.getAbsencePeriod(1977)}" /></pre>
+<pre><p th:text="'2443        ' + ${info.getAbsencePeriod(2443)}" /></pre>
+<pre><p th:text="'4554        ' + ${info.getAbsencePeriod(4554)}" /></pre>
+<pre><p th:text="'5614        ' + ${info.getAbsencePeriod(5614)}" /></pre>
+<pre><p th:text="'7291        ' + ${info.getAbsencePeriod(7291)}" /></pre>
+<pre><p th:text="'8062        ' + ${info.getAbsencePeriod(8062)}" /></pre>
+<pre><p th:text="'8669        ' + ${info.getAbsencePeriod(8669)}" /></pre>
+<pre><p th:text="'8997        ' + ${info.getAbsencePeriod(8997)}" /></pre>
+<pre><p th:text="'11715       ' + ${info.getAbsencePeriod(11715)}" /></pre>
+<pre><p th:text="'11797       ' + ${info.getAbsencePeriod(11797)}" /></pre>
+<hr align="left" width="300" size="2" color="#ff0000" />
+<pre><p th:text="'1569        ' + ${info.getAbsencePeriod(1569)}" /></pre>
+<pre><p th:text="'1570        ' + ${info.getAbsencePeriod(1570)}" /></pre>
+<pre><p th:text="'2194        ' + ${info.getAbsencePeriod(2194)}" /></pre>
+<pre><p th:text="'2272        ' + ${info.getAbsencePeriod(2272)}" /></pre>
+<pre><p th:text="'2656        ' + ${info.getAbsencePeriod(2656)}" /></pre>
+<pre><p th:text="'3504        ' + ${info.getAbsencePeriod(3504)}" /></pre>
+<pre><p th:text="'5142        ' + ${info.getAbsencePeriod(5142)}" /></pre>
+<pre><p th:text="'5328        ' + ${info.getAbsencePeriod(5328)}" /></pre>
+<pre><p th:text="'6123        ' + ${info.getAbsencePeriod(6123)}" /></pre>
+<pre><p th:text="'7033        ' + ${info.getAbsencePeriod(7033)}" /></pre>
+<pre><p th:text="'7322        ' + ${info.getAbsencePeriod(7322)}" /></pre>
+<pre><p th:text="'7683        ' + ${info.getAbsencePeriod(7683)}" /></pre>
+<pre><p th:text="'7766        ' + ${info.getAbsencePeriod(7766)}" /></pre>
+<pre><p th:text="'10805       ' + ${info.getAbsencePeriod(10805)}" /></pre>
+</div>
+</body>
+</html>

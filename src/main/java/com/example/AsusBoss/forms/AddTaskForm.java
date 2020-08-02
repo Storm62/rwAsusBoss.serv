@@ -1,4 +1,4 @@
-package com.example.AsusBoss.tasks;
+package com.example.AsusBoss.forms;
 
 public class AddTaskForm {
 

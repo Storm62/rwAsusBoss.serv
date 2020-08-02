@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service
@@ -67,7 +68,7 @@ public class Tasker {
                 taskMap.put(numb + ".ftpPath", checkValidity(ftpPath));
                 taskMap.put(numb + ".saveAs", checkValidity(saveAs));
                 taskMap.put(numb + ".runProc", checkValidity(runProc));
-                System.out.println("new task MAP " + numb + ": " + taskMap);
+                System.out.println("\tnew task: " + taskMap);
             }
             fw.write(objectMapper.writeValueAsString(taskMap));
             fw.close();
