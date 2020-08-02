@@ -6,7 +6,7 @@ import java.util.*;
 
 @Service
 public class Info {
-    private Map<Integer, Long> timeMap = new HashMap<>();
+    private static Map<Integer, Long> timeMap = new HashMap<>();
 
     public void setLastTime(int number) {
         Date date = new Date();
