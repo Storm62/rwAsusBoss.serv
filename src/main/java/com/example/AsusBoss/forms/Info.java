@@ -27,6 +27,6 @@ public class Info {
             ret = hours + "ч:" + ((diffInMills - (hours * 3600 * 1000)) / (60 * 1000)) + "м";
             return ret;
         } else
-            return "∞";
+            return " ∞";
     }
 }
