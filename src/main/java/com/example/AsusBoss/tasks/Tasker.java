@@ -30,7 +30,7 @@ public class Tasker {
             }
             fis.close();
         } catch (IOException e) {
-            System.err.println("ОШИБКА: проблемы с файлом");
+            System.err.println("ОШИБКА: проблемы с файлом\n");
             e.printStackTrace();
         }
         return taskLine;
