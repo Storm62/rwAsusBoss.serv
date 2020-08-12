@@ -9,7 +9,7 @@ import java.util.*;
 
 @Service
 public class Tasker {
-    private File jsonFile = new File("C:/Windows/Temp/tasks.json");
+    private File jsonFile = new File("/home/rw-srv/rwAsusBoss/tasks.json");
 
 
     private HashMap<String, String> taskMap = new HashMap<>();
