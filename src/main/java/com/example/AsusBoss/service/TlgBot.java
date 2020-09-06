@@ -19,9 +19,8 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class TlgBot extends TelegramLongPollingBot {
 
+public class TlgBot extends TelegramLongPollingBot {
 
     /**
      * Метод для приема сообщений.
@@ -36,11 +35,22 @@ public class TlgBot extends TelegramLongPollingBot {
 
 
     @PostConstruct
-    public void born () {
-        sendMsg("335231553", "Я родился");
-        sendMsg("759471608", "Я родился"); // Oleg
-        sendMsg("346205847", "Я родился"); // Sergey
+    public static void main(String[] args) {
+        ApiContextInitializer.init();
+        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
+        TlgBot bot = new TlgBot();
+        try {
+            telegramBotsApi.registerBot(bot);
+        } catch (TelegramApiRequestException e) {
+            e.printStackTrace();
+        }
+
+        bot.sendMsg("335231553", "Я test");
+        bot.sendMsg("759471608", "Я родился"); // Oleg
+        bot.sendMsg("346205847", "Я родился"); // Sergey
     }
+
+
 
 
 //    @PostConstruct
