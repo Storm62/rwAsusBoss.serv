@@ -2,7 +2,8 @@ package com.example.AsusBoss.conrollers;
 
 import com.example.AsusBoss.forms.AddTaskForm;
 import com.example.AsusBoss.forms.Info;
-import com.example.AsusBoss.tasks.Tasker;
+import com.example.AsusBoss.service.Tasker;
+import com.example.AsusBoss.service.TlgBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +17,16 @@ import java.util.Date;
 public class TaskController {
     SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    @Autowired
     private Tasker tasker;
-    @Autowired
     private Info info;
+    TlgBot bot;
+
+    @Autowired
+    public TaskController(Tasker tasker, Info info, TlgBot bot) {
+        this.tasker = tasker;
+        this.info = info;
+        this.bot = bot;
+    }
 
     @ResponseBody
     @GetMapping ("/task/{number}")
@@ -60,6 +67,23 @@ public class TaskController {
 
         model.addAttribute("info", info);
         return "infoPage";
+    }
+
+    @ResponseBody
+    @GetMapping ("/boss/{number}/{stat}/{name}")
+    public void bossCheck( @PathVariable("number") int number, @PathVariable("stat") boolean stat, @PathVariable("name") String name) {
+        String t = dateFormat.format(new Date());
+        System.out.println(t + "\t" + number + " boss checkin.\t" );
+
+        if (stat) {
+            bot.sendMsg("335231553", name + " зачекинился в " + number);
+            bot.sendMsg("759471608", name + " зачекинился в " + number); // Oleg
+            bot.sendMsg("346205847", name + " зачекинился в " + number); // Sergey
+        } else {
+            bot.sendMsg("335231553", "Кажется " + name + " ушел из " + number);
+            bot.sendMsg("759471608", "Кажется " + name + " ушел из " + number); // Oleg
+            bot.sendMsg("346205847", "Кажется " + name + " ушел из " + number); // Sergey
+        }
     }
 
 
