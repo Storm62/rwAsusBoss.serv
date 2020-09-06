@@ -19,13 +19,13 @@ public class TaskController {
 
     private Tasker tasker;
     private Info info;
-    private static TlgBot bot = new TlgBot();
+    private TlgBot bot;
 
     @Autowired
-    public TaskController(Tasker tasker, Info info) {
+    public TaskController(Tasker tasker, Info info, TlgBot bot) {
         this.tasker = tasker;
         this.info = info;
-
+        this.bot = bot;
     }
 
     @ResponseBody

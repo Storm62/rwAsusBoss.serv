@@ -1,7 +1,9 @@
 package com.example.AsusBoss.service;
 
 
+import com.example.AsusBoss.conrollers.TaskController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
@@ -19,7 +21,7 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class TlgBot extends TelegramLongPollingBot {
 
     /**
@@ -33,10 +35,8 @@ public class TlgBot extends TelegramLongPollingBot {
         sendMsg(update.getMessage().getChatId().toString(), message);
     }
 
-
     @PostConstruct
-    public static void main(String[] args) {
-        ApiContextInitializer.init();
+    public void born() {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         TlgBot bot = new TlgBot();
         try {
@@ -45,7 +45,7 @@ public class TlgBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
 
-        bot.sendMsg("335231553", "Я test");
+        bot.sendMsg("335231553", "Я родился");
         bot.sendMsg("759471608", "Я родился"); // Oleg
         bot.sendMsg("346205847", "Я родился"); // Sergey
     }
