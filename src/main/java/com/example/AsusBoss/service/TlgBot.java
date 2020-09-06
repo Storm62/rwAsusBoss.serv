@@ -1,19 +1,19 @@
 package com.example.AsusBoss.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
-import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
+import org.telegram.telegrambots.generics.LongPollingBot;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -21,6 +21,15 @@ import java.util.List;
 
 @Service
 public class TlgBot extends TelegramLongPollingBot {
+
+    private static TlgBot bot;
+
+    @Autowired
+    public TlgBot(TlgBot bot) {
+        super();
+        this.bot = bot;
+    }
+
     /**
      * Метод для приема сообщений.
      * @param update Содержит сообщение от пользователя.
@@ -37,14 +46,17 @@ public class TlgBot extends TelegramLongPollingBot {
     public static void start() {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-        TlgBot bot = new TlgBot();
+
         try {
             telegramBotsApi.registerBot(bot);
         } catch (TelegramApiRequestException e) {
             e.printStackTrace();
         }
 
-        bot.sendMsg("335231553", "Hello Pavel");
+        bot.sendMsg("335231553", "Я родился");
+        bot.sendMsg("759471608", "Я родился"); // Oleg
+        bot.sendMsg("346205847", "Я родился"); // Sergey
+
     }
 
     /**
