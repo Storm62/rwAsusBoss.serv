@@ -38,16 +38,15 @@ public class TlgBot extends TelegramLongPollingBot {
     @PostConstruct
     public void born() {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-        TlgBot bot = new TlgBot();
+//        TlgBot bot = new TlgBot();
         try {
-            telegramBotsApi.registerBot(bot);
+            telegramBotsApi.registerBot(this);
         } catch (TelegramApiRequestException e) {
             e.printStackTrace();
         }
-
-        bot.sendMsg("335231553", "Я родился");
-        bot.sendMsg("759471608", "Я родился"); // Oleg
-        bot.sendMsg("346205847", "Я родился"); // Sergey
+        sendMsg("335231553", "Я родился");
+        sendMsg("759471608", "Я родился"); // Oleg
+        sendMsg("346205847", "Я родился"); // Sergey
     }
 
 
