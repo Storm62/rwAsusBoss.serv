@@ -34,8 +34,8 @@ public class TlgBot extends TelegramLongPollingBot {
     public void born() {
 
         sendMsg("335231553", "Я родился");
-//        sendMsg("759471608", "Я родился"); // Oleg
-//        sendMsg("346205847", "Я родился"); // Sergey
+        sendMsg("759471608", "Я родился"); // Oleg
+        sendMsg("346205847", "Я родился"); // Sergey
     }
 
 
