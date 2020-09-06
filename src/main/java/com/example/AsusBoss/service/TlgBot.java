@@ -1,11 +1,7 @@
 package com.example.AsusBoss.service;
 
 
-import com.example.AsusBoss.conrollers.TaskController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
@@ -15,7 +11,6 @@ import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
-import org.telegram.telegrambots.generics.LongPollingBot;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -45,8 +40,8 @@ public class TlgBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
         sendMsg("335231553", "Я родился");
-        sendMsg("759471608", "Я родился"); // Oleg
-        sendMsg("346205847", "Я родился"); // Sergey
+//        sendMsg("759471608", "Я родился"); // Oleg
+//        sendMsg("346205847", "Я родился"); // Sergey
     }
 
 
@@ -95,7 +90,7 @@ public class TlgBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "1098282169:AAHejexAqm2jLNX0YfaP8UanjHH15Kz7BIM";
+        return "1098282169:AAEv9Wt7xfoW34zlrOSzrt6JvHVWhl0Er88";
     }
 
     public synchronized void setButtons(SendMessage sendMessage) {
