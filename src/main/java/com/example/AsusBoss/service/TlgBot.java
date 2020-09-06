@@ -22,13 +22,6 @@ import java.util.List;
 @Service
 public class TlgBot extends TelegramLongPollingBot {
 
-    private static TlgBot bot;
-
-    @Autowired
-    public TlgBot(TlgBot bot) {
-        super();
-        this.bot = bot;
-    }
 
     /**
      * Метод для приема сообщений.
@@ -43,21 +36,29 @@ public class TlgBot extends TelegramLongPollingBot {
 
 
     @PostConstruct
-    public static void start() {
-        ApiContextInitializer.init();
-        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
-
-        try {
-            telegramBotsApi.registerBot(bot);
-        } catch (TelegramApiRequestException e) {
-            e.printStackTrace();
-        }
-
-        bot.sendMsg("335231553", "Я родился");
-        bot.sendMsg("759471608", "Я родился"); // Oleg
-        bot.sendMsg("346205847", "Я родился"); // Sergey
-
+    public void born () {
+        sendMsg("335231553", "Я родился");
+        sendMsg("759471608", "Я родился"); // Oleg
+        sendMsg("346205847", "Я родился"); // Sergey
     }
+
+
+//    @PostConstruct
+//    public static void start() {
+//        ApiContextInitializer.init();
+//        TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
+//        TlgBot bot = new TlgBot();
+//        try {
+//            telegramBotsApi.registerBot(bot);
+//        } catch (TelegramApiRequestException e) {
+//            e.printStackTrace();
+//        }
+//
+//        bot.sendMsg("335231553", "TEST");
+////        bot.sendMsg("759471608", "Я родился"); // Oleg
+////        bot.sendMsg("346205847", "Я родился"); // Sergey
+//
+//    }
 
     /**
      * Метод для настройки сообщения и его отправки.
