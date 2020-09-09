@@ -26,19 +26,34 @@ public class TlgBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         String message = update.getMessage().getText();
-        System.out.println("input message: " + message + "\nfrom: " + update.getMessage().toString());
-        sendMsg(update.getMessage().getChatId().toString(), message);
+        System.out.println("chatID: " + update.getMessage().getChatId() + " title: " +
+        update.getMessage().getChat().getTitle() + " name: " + update.getMessage().getChat().getUserName() + ":\n\t" + message);
+
+        if (!(update.getMessage().getChatId() == -406825493)) {
+            sendMsg(update.getMessage().getChatId().toString(), message);
+        } else if (message.toLowerCase().contains(" бот ")) sendMsg("-406825493","чё?");
     }
 
     @PostConstruct
     public void born() {
 
-        sendMsg("335231553", "Я родился");
-        sendMsg("759471608", "Я родился"); // Oleg
-        sendMsg("346205847", "Я родился"); // Sergey
+//        sendMsg("335231553", "Я родился");
+//        sendMsg("759471608", "Я родился"); // Oleg
+//        sendMsg("346205847", "Я родился"); // Sergey
+        sendMsg("-406825493", "Я родился");
     }
 
-
+    public void call(int number, boolean stat, String name) {
+        if (stat) {
+            sendMsg("-406825493", name + " зачекинился в " + number);
+//            bot.sendMsg("759471608", name + " зачекинился в " + number); // Oleg
+//            bot.sendMsg("346205847", name + " зачекинился в " + number); // Sergey
+        } else {
+            sendMsg("-406825493", "Кажется " + name + " ушел из " + number);
+//            bot.sendMsg("759471608", "Кажется " + name + " ушел из " + number); // Oleg
+//            bot.sendMsg("346205847", "Кажется " + name + " ушел из " + number); // Sergey
+        }
+    }
 
 
 //    @PostConstruct
@@ -84,7 +99,7 @@ public class TlgBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "1098282169:AAEv9Wt7xfoW34zlrOSzrt6JvHVWhl0Er88";
+        return "1098282169:AAHZ55Lfedx5pu2pHWVB3SLvkl6SBZpJI40";
     }
 
     public synchronized void setButtons(SendMessage sendMessage) {

@@ -75,15 +75,7 @@ public class TaskController {
         String t = dateFormat.format(new Date());
         System.out.println(t + "\t" + number + " boss checkin.\t" );
 
-        if (stat) {
-            bot.sendMsg("335231553", name + " зачекинился в " + number);
-            bot.sendMsg("759471608", name + " зачекинился в " + number); // Oleg
-            bot.sendMsg("346205847", name + " зачекинился в " + number); // Sergey
-        } else {
-            bot.sendMsg("335231553", "Кажется " + name + " ушел из " + number);
-            bot.sendMsg("759471608", "Кажется " + name + " ушел из " + number); // Oleg
-            bot.sendMsg("346205847", "Кажется " + name + " ушел из " + number); // Sergey
-        }
+        bot.call(number, stat, name);
     }
 
 

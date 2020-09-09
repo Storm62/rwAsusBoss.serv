@@ -26,7 +26,7 @@ public class Tasker {
                 taskLine = taskMap.get(numb + ".time") + "::" + taskMap.get(numb + ".telnet") + "::"
                         + taskMap.get(numb + ".ftpPath") + "::" + taskMap.get(numb + ".saveAs") + "::" + taskMap.get(numb + ".runProc") + "\n\r";
                 System.out.println(taskLine);
-            }
+            } else System.out.println("null");
         } catch (IOException e) {
             System.err.println("ОШИБКА: проблемы с файлом");
             e.printStackTrace();
