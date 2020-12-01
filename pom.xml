@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>asusBoss</artifactId>
 	<version>0.1.1-SNAPSHOT</version>
-	<packaging>jar</packaging>									<!-- указание JAR / WAR -->
+	<packaging>war</packaging>									<!-- указание JAR / WAR -->
 	<name>AsusBoss</name>
 	<description>AsusBoss project on Spring Boot</description>
 
@@ -62,9 +62,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration> 									<!-- конфигурация для JAR -->
-					<executable>true</executable>       			<!-- конфигурация для JAR -->
-				</configuration>									<!-- конфигурация для JAR -->
+				<!--<configuration> 									 конфигурация для JAR -->
+				<!--	<executable>true</executable>       			конфигурация для JAR -->
+			<!--	</configuration> 									 конфигурация для JAR -->
 			</plugin>
 		</plugins>
 	</build>
